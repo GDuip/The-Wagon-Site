@@ -1,117 +1,410 @@
-<!DOCTYPE HTML>
-<HTML>
-    <head>
-        <title>Home | The Wagon Site</title>
-        <link rel="icon" type="image/x-icon" href="../images/JackWagonIcon.png">
-        <link rel="stylesheet" type="text/css" href="../stylez.css">
-        <link href="https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Yatra+One&display=swap" rel="stylesheet">
-        <script type="text/javascript">
-            (function(c,l,a,r,i,t,y){
-                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-            })(window, document, "clarity", "script", "oqwnloclrl");
-        </script>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Centered Small Text</title>
-        <style>
-            .small-centered-text {
-                font-size: 10px;
-                text-align: center;
-            }
-        </style>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Centered Text</title>
-        <style>
-            .centered-text {
-                text-align: center;
-            }
-        </style>
-        <title>Small Text</title>
-        <style>
-            .small-text {
-                font-size: 10px;
-            }
-        </style>
-        <style>
-            .paradented {
-                font-size: 13px;
-                margin-left: 20px;
-            }
-        </style>
-        <style>
-            .paradented2 {
-                font-size: 13px;
-                margin-left: 40px;
-            }
-        </style>
-        <style>
-            .indented {
-                margin-left: 20px;
-            }
-        </style>
-        <style>
-            .indented2 {
-                margin-left: 40px;
-            }
-        </style>
-    </head>
-    <audio id="background-music" autoplay loop></audio>
-    <body>
-        <a href="..\Pages\Config.html"><img src="..\Images\cog.png" alt="cog" style="float: right; width:21px; height:21px;"></a>
-        <p class=""><b>Home</b> | <a href="..\Pages\Navigation.html">All</a> | <a href="..\Pages\TheBypassing.html">The Bypassing</a> | <a href="..\Pages\Gamellection.html">Gamellection</a> | <a href="..\Pages\ProxList.html">ProxList</a> | <a href="..\Pages\Questions.html">Questions</a></p>
-        <hr>
-        <img src="..\Images\PlaceholderBear.png" alt="DESMOND THE MOON BEAR" style="float: left; width:420px; height:420px;">
-        <b><i>The Wagon Site</i></b> is a collection of hacks, hacks, bookmarklets, bypasses, proxies, games, & more, now in <b>HTML</b> flavor!
-        <br>
-        Created on December 7, 2023, this website has had a long history & a lengthy creation process.
-        <br>
-        The best way to launch <b>The Wagon Site</b> with the <a href="..\Launcher.js">Launcher</a>. 
-        <br>
-        <br>
-        We currently boast 21 bookmarklets, 91+5 exploits accross 2 operating systems, 36 games, 3 hacks, & 112 links across 29 different proxies.
-        <br>
-        <br>
-        Panic key is <b>~</b>
-        <br>
-        <br>
-        <div style="line-height:1375%">
-            <br>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Wagon Site - Premium Hacks, Games & Proxies">
+    <meta name="theme-color" content="#0a0a0a">
+    
+    <title>Home | The Wagon Site</title>
+    
+    <!-- Preload Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Eagle+Lake&family=Yatra+One&display=swap" rel="stylesheet">
+    
+    <link rel="icon" type="image/x-icon" href="../Images/JackWagonIcon.png">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" type="text/css" href="../stylez.css">
+
+    <!-- Analytics -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "oqwnloclrl");
+    </script>
+
+    <!-- Page Specific Styles (Add to stylez.css in production) -->
+    <style>
+        /* --- Layout & Typography --- */
+        :root {
+            --c-bg: #050505;
+            --c-glass: rgba(20, 20, 25, 0.7);
+            --c-glass-border: 1px solid rgba(255, 255, 255, 0.08);
+            --c-accent: #a855f7;
+            --c-text-main: #e0e0e0;
+            --c-text-muted: #9ca3af;
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--c-bg);
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(60, 20, 90, 0.2) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(20, 60, 90, 0.2) 0%, transparent 40%);
+            color: var(--c-text-main);
+            font-family: 'Eagle Lake', serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- Navbar --- */
+        .glass-nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: rgba(5, 5, 5, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: var(--c-glass-border);
+        }
+
+        .nav-brand {
+            font-family: 'Yatra One', cursive;
+            font-size: 1.5rem;
+            color: #fff;
+            text-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--c-text-muted);
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--c-accent);
+            text-shadow: 0 0 8px rgba(168, 85, 247, 0.4);
+        }
+
+        .settings-icon img {
+            width: 24px;
+            height: 24px;
+            transition: transform 0.5s ease;
+            filter: drop-shadow(0 0 5px rgba(255,255,255,0.3));
+        }
+
+        .settings-icon:hover img {
+            transform: rotate(90deg);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-family: 'Yatra One', cursive;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #fff, #ccc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-desc {
+            font-size: 1.1rem;
+            color: var(--c-text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 450px;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            border: var(--c-glass-border);
+            mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+        }
+
+        .btn-glow {
+            display: inline-block;
+            padding: 12px 30px;
+            background: rgba(168, 85, 247, 0.1);
+            border: 1px solid var(--c-accent);
+            color: var(--c-accent);
+            text-decoration: none;
+            border-radius: 4px;
+            font-family: 'Yatra One', cursive;
+            transition: all 0.3s;
+        }
+
+        .btn-glow:hover {
+            background: var(--c-accent);
+            color: #000;
+            box-shadow: 0 0 20px var(--c-accent);
+        }
+
+        /* --- Stats Grid --- */
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto 4rem;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .stat-card {
+            background: var(--c-glass);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: var(--c-glass-border);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            background: rgba(30, 30, 35, 0.8);
+        }
+
+        .stat-number {
+            display: block;
+            font-family: 'Yatra One';
+            font-size: 2.5rem;
+            color: var(--c-accent);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--c-text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* --- Accordion (Details) --- */
+        .overview-section {
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            padding: 0 2rem;
+        }
+
+        details {
+            background: var(--c-glass);
+            border: var(--c-glass-border);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        details[open] {
+            border-color: var(--c-accent);
+        }
+
+        summary {
+            padding: 1rem;
+            cursor: pointer;
+            font-weight: bold;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        summary::-webkit-details-marker { display: none; }
+
+        summary::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--c-accent);
+            transition: transform 0.3s;
+        }
+
+        details[open] summary::after {
+            transform: rotate(45deg);
+        }
+
+        .details-content {
+            padding: 1rem 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            background: rgba(0,0,0,0.2);
+        }
+
+        .details-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .details-content li {
+            margin-bottom: 0.8rem;
+            padding-left: 1rem;
+            border-left: 2px solid var(--c-accent);
+        }
+
+        /* --- Footer --- */
+        .site-footer {
+            text-align: center;
+            padding: 3rem 0;
+            border-top: var(--c-glass-border);
+            background: #020202;
+            font-size: 0.9rem;
+            color: var(--c-text-muted);
+        }
+
+        .footer-links a {
+            color: var(--c-accent);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero { grid-template-columns: 1fr; text-align: center; }
+            .hero-image { order: -1; }
+            .nav-links { display: none; } /* Could add hamburger menu logic here */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Background Audio -->
+    <audio id="background-music" loop></audio>
+
+    <!-- Navigation -->
+    <nav class="glass-nav">
+        <div class="nav-brand">The Wagon</div>
+        <ul class="nav-links">
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="../Pages/Navigation.html">All Pages</a></li>
+            <li><a href="../Pages/TheBypassing.html">Bypassing</a></li>
+            <li><a href="../Pages/Gamellection.html">Games</a></li>
+            <li><a href="../Pages/ProxList.html">Proxies</a></li>
+        </ul>
+        <a href="../Pages/Config.html" class="settings-icon">
+            <img src="../Images/cog.png" alt="Settings">
+        </a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to the Void</h1>
+            <p class="hero-desc">
+                The Wagon Site is a premium collection of <b>hacks, bookmarklets, exploits, and proxies</b>. 
+                Rebuilt from the ground up in pure HTML flavor for speed and stealth.
+            </p>
+            <p class="hero-desc">
+                Panic Key: <b style="color:var(--c-accent);">~</b> (Tilde)
+            </p>
+            <a href="../Launcher.js" class="btn-glow">Launch System</a>
         </div>
-        <p class="small-text" style="flaot: left;"><a href="https://discord.gg/KpCKjQx7hr">Discord</a> | <a href="mailto:JackWagon885@gmail.com">Email</a></p>
-        <div style="line-height:2125%;">
-            <br>
+        <div class="hero-image">
+            <img src="../Images/PlaceholderBear.png" alt="Desmond The Moon Bear">
         </div>
+    </section>
+
+    <!-- Live Stats Dashboard -->
+    <section class="stats-container">
+        <div class="stat-card">
+            <span class="stat-number">21</span>
+            <span class="stat-label">Bookmarklets</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-number">96</span>
+            <span class="stat-label">Exploits</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-number">36</span>
+            <span class="stat-label">Games</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-number">29</span>
+            <span class="stat-label">Proxies</span>
+        </div>
+    </section>
+
+    <!-- Overview Accordion -->
+    <section class="overview-section">
         <details>
-            <summary><b>Overview</b></summary>
-            <ul>
-                <li><b>Home</b> is the home page (no shit).</li>
-                <li><b>Bookmarkllection</b> is a collection of various bookmarklets.</li>
-                <li><b>Bypassing Guides</b> are guides on where to get started with exploits.</li>
-                <li><b>Bypassing Kits</b> are instructions for exploits on different software.</li>
-                <li><b>CargoWagon</b> holds downloads for stuff stuff.</li>
-                <li><b>Config</b> includes settings such as music, background color, cloaking method, & more.</li>
-                <li><b>Extension List</b> contains information on various extensions.</li>
-                <li><b>Gamellection</b> is a collection of different web games.</li>
-                <li><b>Navigation</b> shows a list of every page. If you don't see something on the navigation bar, visit this page/</li>
-                <li><b>Projects</b> features other projects from JackWagon885 (TBA).</li>
-                <li><b>ProxList</b> contains hundreds of different links to many different proxies.</li>
-                <li><b>Questions</b> are where many questions are held.</li>
-                <p class="small-text">Note that pages are still being made. If you find anything, contact me.</p>
-            </ul>
+            <summary>System Manifest (Overview)</summary>
+            <div class="details-content">
+                <ul>
+                    <li><b>Bookmarkllection:</b> Curated javascript injections.</li>
+                    <li><b>Bypassing Guides:</b> Entry points for system exploitation.</li>
+                    <li><b>CargoWagon:</b> Secure download repository.</li>
+                    <li><b>Config:</b> Customize cloaking, audio, and visual themes.</li>
+                    <li><b>Gamellection:</b> Unblocked web entertainment.</li>
+                    <li><b>ProxList:</b> 100+ link mirrors for stealth browsing.</li>
+                    <li><b>Projects:</b> Nebuli Labs & JackWagon885 works.</li>
+                </ul>
+                <br>
+                <p style="font-size:0.8rem; opacity:0.7;">System created: Dec 7, 2023</p>
+            </div>
         </details>
-        <div style="line-height:2250%;">
-            <br>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-links">
+            <a href="https://discord.gg/KpCKjQx7hr" target="_blank">Discord Comm</a>
+            |
+            <a href="mailto:JackWagon885@gmail.com">Secure Mail</a>
         </div>
-        <p class="small-centered-text">Created by The Wagonization, consisting of JackWagon885
         <br>
-        <i>Also see another project I work on, <a href="https://docs.google.com/document/d/19OkAQdvproXgEJIJU9wuu0GUeKcJygttYPSFaDeP9Ig/edit?usp=sharing">Nebuli Labs</a></i>
-        <br>
-        All credit goes to the respective owners. I only compile them in a list.
-        <br>
-        Fuck you Google</p>
-    </body>
-</HTML>
-<script src="..\yee.js"></script>
+        <p>Created by <b>The Wagonization</b> (JackWagon885)</p>
+        <p style="font-size: 0.8rem; opacity: 0.5;">
+            Also visit <a href="https://docs.google.com/document/d/19OkAQdvproXgEJIJU9wuu0GUeKcJygttYPSFaDeP9Ig/edit?usp=sharing" style="color:inherit;">Nebuli Labs</a>
+        </p>
+        <p style="margin-top:1rem; font-family:'Yatra One'; opacity:0.3;">NO GOOGLE ALLOWED</p>
+    </footer>
+
+    <!-- Script Loader -->
+    <script src="../yee.js"></script>
+    
+    <!-- Local Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Attempt Audio Play
+            const audio = document.getElementById('background-music');
+            if(audio) {
+                audio.volume = 0.3;
+                // Browsers often block this until interaction, handled by yee.js/Song.js usually
+                audio.play().catch(e => console.log("Audio waiting for interaction"));
+            }
+
+            // Stats Counter Animation
+            const stats = document.querySelectorAll('.stat-number');
+            stats.forEach(stat => {
+                const target = +stat.innerText;
+                let count = 0;
+                const speed = 2000 / target; // Animation speed
+
+                const updateCount = () => {
+                    count++;
+                    stat.innerText = count;
+                    if(count < target) {
+                        setTimeout(updateCount, 20);
+                    }
+                }
+                updateCount();
+            });
+        });
+    </script>
+</body>
+</html>
