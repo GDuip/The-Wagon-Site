@@ -1,265 +1,478 @@
-<!DOCTYPE HTML>
-<HTML>
-    <head>
-        <title>Bypasser's Windowskit | The Wagon Site</title>
-        <link rel="icon" type="image/x-icon" href="../images/JackWagonIcon.png">
-        <link rel="stylesheet" type="text/css" href="../stylez.css">
-        <link href="https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Yatra+One&display=swap" rel="stylesheet">
-        <script type="text/javascript">
-            (function(c,l,a,r,i,t,y){
-                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-            })(window, document, "clarity", "script", "oqwnloclrl");
-        </script>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Centered Small Text</title>
-        <style>
-            .small-centered-text {
-                font-size: 10px;
-                text-align: center;
-            }
-        </style>
-        <title>Centered Text</title>
-        <style>
-            .centered-text {
-                text-align: center;
-            }
-        </style>
-        <title>Small Text</title>
-        <style>
-            .small-text {
-                font-size: 10px;
-            }
-        </style>
-        <style>
-            .paradented {
-                font-size: 13px;
-                margin-left: 20px;
-            }
-        </style>
-        <style>
-            .paradented2 {
-                font-size: 13px;
-                margin-left: 40px;
-            }
-        </style>
-        <style>
-            .indented {
-                margin-left: 20px;
-            }
-        </style>
-        <style>
-            .indented2 {
-                margin-left: 40px;
-            }
-        </style>
-    </head>
-    <audio id="background-music" autoplay loop></audio>
-    <body>
-        <a href="..\Pages\Config.html"><img src="..\Images\cog.png" alt="cog" style="float: right; width:21px; height:21px;"></a>
-        <p class=""><a href="..\Pages\Home.html">Home</a> | <a href="..\Pages\Navigation.html">All</a> | <a href="..\Pages\TheBypassing.html">The Bypassing</a> | <a href="..\Pages\Gamellection.html">Gamellection</a> | <a href="..\Pages\ProxList.html">ProxList</a> | <a href="..\Pages\Questions.html">Questions</a></p>
-        <hr>
-        <p class="small-centered-text">This page is for Windows exploits
-        <br>
-        For Chrome/Chrome OS exploits, see <a href="..\Pages\Bypasser'sChromekit.html">Bypasser’s Chromekit</a></p>
-        <br>
-        <br>
-        <!-- <details style="display:none;" id="ExploitSearchContainer">
-            <summary><b id="ExploitSearch">Exploit Finder</b></summary>
-            <form id="ExploitSearch-Form">
-                <label>Windows Version</label>
-                <ul id="ExploitSearch-WindowsVersion">
-                    <li><input class="esterm" esterm-value="7" type="checkbox">7</li>
-                    <li><input class="esterm" esterm-value="8" type="checkbox">8</li>
-                    <li><input class="esterm" esterm-value="8.1" type="checkbox">8.1</li>
-                    <li><input class="esterm" esterm-value="10" type="checkbox">10</li>
-                    <li><input class="esterm" esterm-value="11" type="checkbox">11</li>
-                </ul>
-                <label>Exploit Type</label>
-                <ul id="ExploitSearch-ExploitType">
-                    <li><input class="esterm" esterm-value="Software" type="checkbox" checked="true">Software Based</li>
-                    <li><input class="esterm" esterm-value="Hardware" type="checkbox" checked="true">Hardware Based</li>
-                    <li><input class="esterm" esterm-value="Web" type="checkbox" checked="true">Web Based</li>
-                </ul>
-                <label>Blocker</label>
-                <ul id="ExploitSearch-Blocker">
-                    <li><input class="esterm" esterm-value="iBoss" type="checkbox" checked="true">iBoss</li>
-                    <li><input class="esterm" esterm-value="Securely" type="checkbox" checked="true">Securely</li>
-                </ul>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Windows Exploitation Toolkit - The Wagon Site">
+    <meta name="theme-color" content="#0a0a0a">
+    
+    <title>WindowsKit | The Wagon Site</title>
+    
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Eagle+Lake&family=Yatra+One&family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="icon" type="image/x-icon" href="../Images/JackWagonIcon.png">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" type="text/css" href="../stylez.css">
+
+    <!-- Analytics -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "oqwnloclrl");
+    </script>
+
+    <!-- Page Specific Styles -->
+    <style>
+        /* --- Layout --- */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-attachment: fixed; /* Parallax feel */
+        }
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+            width: 100%;
+        }
+
+        /* --- Sidebar (Control Panel) --- */
+        .sidebar {
+            position: sticky;
+            top: 100px; /* Below Navbar */
+            height: fit-content;
+            background: rgba(10, 10, 12, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .filter-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .filter-group label {
+            display: block;
+            font-family: 'Yatra One', cursive;
+            color: var(--c-accent);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        /* Custom Checkbox "Chips" */
+        .filter-chip {
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .filter-chip input {
+            display: none;
+        }
+
+        .chip-label {
+            display: block;
+            padding: 6px 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            transition: all 0.2s ease;
+            color: #aaa;
+        }
+
+        .filter-chip input:checked + .chip-label {
+            background: var(--c-accent);
+            color: #000;
+            border-color: var(--c-accent);
+            box-shadow: 0 0 10px rgba(168, 85, 247, 0.4);
+        }
+
+        /* --- Content Area --- */
+        .exploit-card {
+            background: rgba(20, 20, 25, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .exploit-card:hover {
+            border-color: var(--c-accent);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+        }
+
+        /* Accordion Styling */
+        details summary {
+            padding: 1.5rem;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255,255,255,0.02);
+        }
+
+        details summary::-webkit-details-marker { display: none; }
+
+        .summary-title {
+            font-family: 'Yatra One', cursive;
+            font-size: 1.5rem;
+            color: #fff;
+        }
+
+        .summary-meta {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .badge {
+            font-size: 0.7rem;
+            padding: 4px 8px;
+            border-radius: 4px;
+            background: #222;
+            color: #888;
+            border: 1px solid #333;
+            text-transform: uppercase;
+        }
+
+        .badge.ver { color: #4ff; border-color: #4ff; }
+        .badge.req { color: #f44; border-color: #f44; }
+
+        .exploit-content {
+            padding: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            background: rgba(0,0,0,0.3);
+        }
+
+        /* Terminal Code Block */
+        .terminal {
+            background: #0d0d0d;
+            border: 1px solid #333;
+            border-radius: 6px;
+            padding: 1rem;
+            font-family: 'Fira Code', monospace;
+            color: #0f0;
+            margin: 1rem 0;
+            position: relative;
+            overflow-x: auto;
+        }
+
+        .terminal::before {
+            content: "CMD / POWERSHELL";
+            position: absolute;
+            top: 0; right: 0;
+            background: #333;
+            color: #fff;
+            font-size: 0.6rem;
+            padding: 2px 6px;
+            border-bottom-left-radius: 6px;
+        }
+
+        .step-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .step-list li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .step-list li::before {
+            content: '>';
+            position: absolute;
+            left: 0;
+            color: var(--c-accent);
+            font-weight: bold;
+        }
+
+        .hidden-item { display: none; }
+
+        /* Video Container */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            background: #000;
+            border: 1px solid #333;
+            margin-top: 1rem;
+        }
+        
+        .video-wrapper video {
+            position: absolute;
+            top:0; left:0; width:100%; height:100%;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .main-grid { grid-template-columns: 1fr; }
+            .sidebar { position: relative; top: 0; margin-bottom: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <audio id="background-music" loop></audio>
+
+    <!-- Glass Navbar -->
+    <nav class="glass-nav">
+        <div class="nav-brand">WindowsKit</div>
+        <ul class="nav-links">
+            <li><a href="../Pages/Home.html">Home</a></li>
+            <li><a href="../Pages/TheBypassing.html">Bypassing</a></li>
+            <li><a href="../Pages/Bypasser'sChromekit.html">ChromeKit</a></li>
+            <li><a href="../Pages/ProxList.html">Proxies</a></li>
+        </ul>
+        <a href="../Pages/Config.html" class="settings-icon"><img src="../Images/cog.png" alt="Settings"></a>
+    </nav>
+
+    <!-- Main Grid Layout -->
+    <main class="main-grid">
+        
+        <!-- Sidebar: Control Panel -->
+        <aside class="sidebar">
+            <h3 style="font-family:'Yatra One'; margin-bottom:1rem; border-bottom:1px solid #333; padding-bottom:0.5rem;">Exploit Finder</h3>
+            
+            <div class="filter-group">
+                <label>Target Version</label>
+                <div class="tag-cloud">
+                    <label class="filter-chip"><input type="checkbox" value="7" checked><span class="chip-label">Win 7</span></label>
+                    <label class="filter-chip"><input type="checkbox" value="8" checked><span class="chip-label">Win 8</span></label>
+                    <label class="filter-chip"><input type="checkbox" value="10" checked><span class="chip-label">Win 10</span></label>
+                    <label class="filter-chip"><input type="checkbox" value="11" checked><span class="chip-label">Win 11</span></label>
+                </div>
+            </div>
+
+            <div class="filter-group">
                 <label>Requirements</label>
-                <ul id="ExploitSearch-ExploitReq">
-                    <li><input class="esterm" esterm-value="Administrator" type="checkbox" checked="true">Administrator Privileges</li>
-                    <li><input class="esterm" esterm-value="CommandPrompt" type="checkbox" checked="true">Command Prompt</li>
-                    <li><input class="esterm" esterm-value="CDrive" type="checkbox" checked="true">Installation Drive Access</li>
-                    <li><input class="esterm" esterm-value="ExternalPC" type="checkbox" checked="true">External PC</li>
-                    <li><input class="esterm" esterm-value="BootSettings" type="checkbox" checked="true">Boot Settings</li>
-                    <li><input class="esterm" esterm-value="FactoryReset" type="checkbox" checked="true">Factory Reset</li>
-                    <li><input class="esterm" esterm-value="Powershell" type="checkbox" checked="true">Powershell</li>
-                    <li><input class="esterm" esterm-value="Screwdriver" type="checkbox" checked="true">Screwdriver</li>
-                    <li><input class="esterm" esterm-value="TaskManager" type="checkbox" checked="true">Task Manager</li>
-                    <li><input class="esterm" esterm-value="WindowsPE" type="checkbox" checked="true">Windows PE</li>
+                <div class="tag-cloud">
+                    <label class="filter-chip"><input type="checkbox" value="admin" checked><span class="chip-label">Admin</span></label>
+                    <label class="filter-chip"><input type="checkbox" value="usb" checked><span class="chip-label">USB/Drive</span></label>
+                    <label class="filter-chip"><input type="checkbox" value="cmd" checked><span class="chip-label">CMD Access</span></label>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <label>Navigation</label>
+                <ul style="list-style:none; padding:0; font-size:0.9rem;">
+                    <li style="margin-bottom:5px;"><a href="#Batched" style="color:#888; text-decoration:none;">Batched</a></li>
+                    <li style="margin-bottom:5px;"><a href="#CMaDmin" style="color:#888; text-decoration:none;">CMaDmin</a></li>
+                    <li style="margin-bottom:5px;"><a href="#DeTasked" style="color:#888; text-decoration:none;">DeTasked</a></li>
+                    <li style="margin-bottom:5px;"><a href="#PowerEXE" style="color:#888; text-decoration:none;">PowerEXE</a></li>
+                    <li style="margin-bottom:5px;"><a href="#Swapped" style="color:#888; text-decoration:none;">Swapped</a></li>
                 </ul>
-                <button type="submit">Search</button>
-            </form>
-        </details>
-        <br> -->
-        <details>
-            <summary><b id="ToC">Table of Contents</b></summary>
-            <a id="ND" href="#Batched">Batched</a>
-            <br>
-            <a id="ND" href="#CMaDmin">CMaDmin</a>
-            <br>
-            <a id="ND" href="#DeTasked">DeTasked</a>
-            <br>
-            <a id="ND" href="#PowerEXE">PowerEXE</a>
-            <br>
-            <details>
-                <summary> <a id="ND" href="#Swapped">Swapped</a></summary>
-                    <ul>
-                        <li><a id="ND" href="#SwappedManualMethod">Swapped Manual</a></li>
-                    </ul>
-            </details>
-        </details>
-        <hr>
-        <br>
-        <details>
-            <searchi>7;8;8.1;10;11</searchi>
-            <searchi>Software</searchi>
-            <summary><b id="Batched">Batched</b></summary>
-            <p class="small-text">Windows ?+; requires Command Prompt (somewhat)
-            <br>
-            Run a batch file to emulate other apps or run commands.</p>
-            <br>
-            1: Create a new .bat file. This can be done by changing the file extension or using "Save As".
-            <br>
-            2: Add contents to it.
-            <br>
-            3: Run it.
-        </details>
-        <br>
-        <details>
-            <searchi>7;8;8.1;10;11</searchi>
-            <searchi>Software</searchi>
-            <searchi>CDrive;WindowsPE</searchi>
-            <summary><b id="CMaDmin">CMaDmin</b></summary>
-            <p class="small-text">Windows 7+; requires admin*
-            <br>
-            Create a new administrator account, bypassing restrictions.</p>
-            <br>
-            1: Access an admin Command Prompt/Powershell prompt. You can access an elevated Command Prompt/Powershell instance (more permissions than admin) by booting into Windows PE, selecting "Advanced Options", then "Command Prompt". You can also use a Windows 10 Media Installation USB & select Next>Repair Your Computer>Troubleshoot>Command Prompt.
-            <br>
-            2: Create a new user by running these commands: "net {username} /add" & "net localgroup administrators {username} /add".
-            <br>
-            3: Login with the username & password you made. This account has administrator access.
-        </details>
-        <br>
-        <details>
-            <searchi>7;8;8.1;10;11</searchi>
-            <searchi>Software</searchi>
-            <searchi>Administrator;TaskManager</searchi>
-            <summary><b id="DeTasked">DeTasked</b></summary>
-            <p class="small-text">Windows ?+; requires admin
-            <br>
-            End the task of (or just delete) the file.</p>
-            <br>
-            1: Open Task Manager. You can use the search box or Ctrl+Alt+Delete.
-            <br>
-            2: Find the file responsible. If you're bypassing parental controls, the file will be "wpcmon.exe".
-            <br>
-            3: Right click it, then you can either click "End Task" to stop it for now or click "Open File Location" & then delete the file itself.
-        </details>
-        <br>
-        <details>
-            <searchi>10;11</searchi>
-            <searchi>Software</searchi>
-            <searchi>CommandPrompt;Powershell</searchi>
-            <summary><b id="PowerEXE">PowerEXE</b></summary>
-            <p class="small-text">Windows 10+; requires Command Prompt/Powershell
-            <br>
-            Allows you to run any executable file you want.</p>
-            <br>
-            1: Open Windows Powershell & run “cd (exelocation)”.
-            <br> 
-            2: Run “copy .\filename C:\Windows\Temp\exefilename”.
-            <br>
-            3: Run “C:\Windows\Temp\exefilename”.
-        </details>
-        <br>
-        <details>
-            <searchi>7;8;8.1;10;11</searchi>
-            <searchi>Software</searchi>
-            <searchi>CDrive;WindowsRE</searchi>
-            <summary><b id="Swapped">Swapped</b></summary>
-            <p class="small-text">Windows ?+; requires elevated command line & installation drive (commonly C) access
-            <br>
-            Swaps a file (commonly Sticky Keys or Ease of Access Manager) with any file you want.
-            <br>
-            Note: you <i>can</i> just preform CMaDmin inside the elevated prompt if you wish.
-            <br>
-            <i>Also known as either the Sticky Keys or Utilman exploit.</i></p>
-            <details>
-                <summary>Swapped.mp4</summary>
-                <video width="640" height="480" controls> <source src="video.mp4" type="video/mp4"> Looks like your browser is a shit of piece.</video>
-            </details>
-            <br>
-            1: Access an elevated Command Prompt/Powershell instance.  There are multiple ways to do this:
-            <br>
-                <j class="paradented">Booting into Windows RE, selecting "<i>Advanced Options</i>", then "<i>Command Prompt</i>". For more information, see the <a href="..\Pages\Questions.html">Questions</a> page.</j>
-                <br>
-                <j class="paradented">Booting a Windows installation media on an external storage device & selecting <i>Next</i> > <i>Repair Your Computer</i> > <i>Troubleshoot</i> > <i>Command Prompt</i>.</j>
-            <br> 
-            2: Run “C:”
-            <br>
-                <j class="paradented">Note that Windows can be installed on any drive, C is just the most common one.</j>
-            <br>
-            3: Run “<i>dir</i>”. Keep going until you find a drive with the Windows directory (1).
-            <br>
-            4: Create a backup by running “<i>copy sethc.exe sethc.bak</i>” for Sticky Keys or "<i>copy utilman.exe utilman.bak</i>" for Utilman.
-            <br>
-            5: Swap the respective file with another file. I recommend either cmd.exe or the <a id="ND" href="..\Downloads\UtilmanReplacer.exe">Ease of Access Replacer</a>.
-            <br>
-                <j class="paradented">For Command Prompt, run “<i>copy cmd.exe sethc.exe</i>” for Sticky Keys or "<i>copy cmd.exe utilman.exe</i>" for Utilman.</j>
-            <br>
-            6: Type "<i>Y</i>" to proceed.
-            <br>
-            7: Activate Sticky Keys (press Shift 5 times) or click the Ease of Access button (on the login screen as well as Ctrl+Alt+Delete).
-            <br>
-            8: Run any commands, such as the ones in CMaDmin.
-            <br>
-            <br>
-            <details>
-                <searchi>7;8;8.1;10;11</searchi>
-                <searchi>Software</searchi>
-                <searchi>Administrator;CDrive</searchi>
-                <summary><b id="SwappedManualMethod">Swapped Manual</b></summary>
-                <p class="small-text">Windows ?+; requires admin & installation drive (commonly C) access
-                    <br>
-                    Manually swap either Sticky Keys or Utilman with any file you want.</p>
-                    1: Open File Explorer.
-                    <br>
-                    2: Find the file you want to replace (sethc.exe for Sticky Keys or utilman.exe for Utilman).
-                    <br>
-                    3: Make a duplicate & change the file type to .bak (or whatever really).
-                    <br>
-                    4: Replace the original file with another file (make sure it has the same name). I recommend either cmd.exe or the <a id="ND" href="..\Downloads\UtilmanReplacer.exe">Ease of Access Replacer</a>.
-                    <br>
-                    5: Activate Sticky Keys (press Shift 5 times) or click the Ease of Access button (on login screen as well as Ctrl+Alt+Delete).
-                    <br>
-                    6: Run any commands, such as the ones in CMaDmin.
-            </details>
-        </details>
-    <div style="line-height:2250%;">
-        <br>
-    </div>
-    <p class="small-centered-text">Created by The Wagonization, consisting of JackWagon885 
-    <br>
-    All credit goes to the respective owners. I only compile them in a list.
-    <br>
-    Gotta love how Google didn't take this page down</p>
-    <script src="../js/windowskit.js"></script>
-    </body>
-</HTML>
-<script src="..\yee.js"></script>
+            </div>
+        </aside>
+
+        <!-- Content: Exploits -->
+        <section id="exploit-container">
+            
+            <!-- Batched -->
+            <article class="exploit-card" data-ver="7 8 10 11" data-req="cmd">
+                <details id="Batched">
+                    <summary>
+                        <span class="summary-title">Batched</span>
+                        <div class="summary-meta">
+                            <span class="badge ver">Win 7+</span>
+                            <span class="badge req">Basic CMD</span>
+                        </div>
+                    </summary>
+                    <div class="exploit-content">
+                        <p>Run a batch file to emulate other apps or run automated command sequences.</p>
+                        <ol class="step-list">
+                            <li>Create a new text file.</li>
+                            <li>Change the extension from <code>.txt</code> to <code>.bat</code>.</li>
+                            <li>Right click > Edit, and paste your code.</li>
+                            <li>Double click to run.</li>
+                        </ol>
+                    </div>
+                </details>
+            </article>
+
+            <!-- CMaDmin -->
+            <article class="exploit-card" data-ver="7 8 10 11" data-req="admin usb">
+                <details id="CMaDmin">
+                    <summary>
+                        <span class="summary-title">CMaDmin</span>
+                        <div class="summary-meta">
+                            <span class="badge ver">Win 7+</span>
+                            <span class="badge req">Admin / PE</span>
+                        </div>
+                    </summary>
+                    <div class="exploit-content">
+                        <p>Forcefully create a new administrator account, bypassing restrictions.</p>
+                        <ol class="step-list">
+                            <li>Access an elevated prompt via <b>Windows PE</b> (Repair Computer > Troubleshoot > CMD).</li>
+                            <li>Execute the following commands to add a user:</li>
+                        </ol>
+                        <div class="terminal">
+                            net user username /add<br>
+                            net localgroup administrators username /add
+                        </div>
+                        <p>Login with the new account. You now have full control.</p>
+                    </div>
+                </details>
+            </article>
+
+            <!-- DeTasked -->
+            <article class="exploit-card" data-ver="7 8 10 11" data-req="admin">
+                <details id="DeTasked">
+                    <summary>
+                        <span class="summary-title">DeTasked</span>
+                        <div class="summary-meta">
+                            <span class="badge ver">Win 7+</span>
+                            <span class="badge req">Task Mgr</span>
+                        </div>
+                    </summary>
+                    <div class="exploit-content">
+                        <p>Kill the monitoring process directly from memory.</p>
+                        <ol class="step-list">
+                            <li>Open Task Manager (<code>Ctrl+Shift+Esc</code> or <code>Ctrl+Alt+Del</code>).</li>
+                            <li>Locate the monitoring process (e.g., <code>wpcmon.exe</code> for Parental Controls).</li>
+                            <li>Right click > <b>End Task</b>.</li>
+                            <li>Optional: Right click > "Open File Location" and delete the .exe file permanently.</li>
+                        </ol>
+                    </div>
+                </details>
+            </article>
+
+            <!-- PowerEXE -->
+            <article class="exploit-card" data-ver="10 11" data-req="cmd powershell">
+                <details id="PowerEXE">
+                    <summary>
+                        <span class="summary-title">PowerEXE</span>
+                        <div class="summary-meta">
+                            <span class="badge ver">Win 10+</span>
+                            <span class="badge req">Powershell</span>
+                        </div>
+                    </summary>
+                    <div class="exploit-content">
+                        <p>Bypass execution restrictions by moving files to the Windows Temp directory.</p>
+                        <div class="terminal">
+                            cd "Path\To\Your\File"<br>
+                            copy .\filename.exe C:\Windows\Temp\payload.exe<br>
+                            C:\Windows\Temp\payload.exe
+                        </div>
+                    </div>
+                </details>
+            </article>
+
+            <!-- Swapped -->
+            <article class="exploit-card" data-ver="7 8 10 11" data-req="admin usb cmd">
+                <details id="Swapped" open>
+                    <summary>
+                        <span class="summary-title">Swapped (Sticky Keys)</span>
+                        <div class="summary-meta">
+                            <span class="badge ver">Win 7+</span>
+                            <span class="badge req">Drive Access</span>
+                        </div>
+                    </summary>
+                    <div class="exploit-content">
+                        <p> The legendary "Utilman/Sticky Keys" exploit. Swaps accessibility tools with a System-Level Command Prompt.</p>
+                        
+                        <div class="video-wrapper">
+                            <video controls>
+                                <source src="video.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <br>
+                        
+                        <h4>Method 1: Command Line (Recovery Mode)</h4>
+                        <ol class="step-list">
+                            <li>Boot into Recovery Mode (Advanced Options > CMD).</li>
+                            <li>Identify your system drive (usually C: or D:). Run <code>dir</code> to check.</li>
+                            <li>Execute swap command:</li>
+                        </ol>
+                        <div class="terminal">
+                            copy C:\Windows\System32\sethc.exe C:\sethc.bak<br>
+                            copy C:\Windows\System32\cmd.exe C:\Windows\System32\sethc.exe
+                        </div>
+                        <p>Reboot. At the login screen, press <b>Shift 5 times</b>. A System CMD will open.</p>
+
+                        <hr style="border-color:#333; margin: 1rem 0;">
+
+                        <h4>Method 2: Manual Swap</h4>
+                        <p>Requires read/write access to the drive (e.g., connecting the drive to another PC).</p>
+                        <ol class="step-list">
+                            <li>Navigate to <code>Windows\System32</code>.</li>
+                            <li>Rename <code>utilman.exe</code> to <code>utilman.bak</code>.</li>
+                            <li>Copy <code>cmd.exe</code> and rename the copy to <code>utilman.exe</code>.</li>
+                            <li>Boot back up and click the "Ease of Access" icon at login.</li>
+                        </ol>
+                        <p>Recommended Tool: <a href="../Downloads/UtilmanReplacer.exe" style="color:var(--c-accent);">Ease of Access Replacer</a></p>
+                    </div>
+                </details>
+            </article>
+
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer style="text-align:center; padding:2rem; color:#666; font-size:0.8rem;">
+        The Wagonization | JackWagon885 <br>
+        <span style="opacity:0.5">Google can't stop the signal.</span>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../yee.js"></script>
+    
+    <!-- Exploit Finder Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const inputs = document.querySelectorAll('.filter-chip input');
+            const cards = document.querySelectorAll('.exploit-card');
+
+            function filterExploits() {
+                // 1. Get all checked values
+                const checked = Array.from(inputs)
+                    .filter(input => input.checked)
+                    .map(input => input.value);
+
+                // 2. Iterate cards
+                cards.forEach(card => {
+                    const versions = card.dataset.ver.split(' ');
+                    const reqs = card.dataset.req.split(' ');
+                    
+                    // Logic: Card must match AT LEAST one selected version AND ALL selected requirements? 
+                    // Let's keep it simple: Show if it matches any selected Version.
+                    // Requirements filtering is usually subtractive, but for this UI, let's just match versions.
+                    
+                    const matchesVer = versions.some(v => checked.includes(v));
+                    
+                    // If visual filtering is desired:
+                    if (matchesVer) {
+                        card.classList.remove('hidden-item');
+                    } else {
+                        card.classList.add('hidden-item');
+                    }
+                });
+            }
+
+            // Attach listeners
+            inputs.forEach(input => input.addEventListener('change', filterExploits));
+        });
+    </script>
+</body>
+</html>
