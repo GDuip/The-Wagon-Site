@@ -1,79 +1,245 @@
-<!DOCTYPE HTML>
-<HTML>
-    <head>
-        <title>Blobbing...</title>
-        <link rel="icon" type="image/x-icon" href="..\Images\Drifter.png">
-        <link rel="stylesheet" type="text/css" href="stylez.css">
-        <link href="https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Yatra+One&display=swap" rel="stylesheet">
-        <script>
-            const htmlContent = `
-            <!DOCTYPE HTML>
-            <HTML lang="en">
-                <head>
-                    <title>New Tab</title>
-                    <link rel="stylesheet" type="text/css" href="stylez.css">
-                    <link href="https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap" rel="stylesheet">
-                    <link href="https://fonts.googleapis.com/css2?family=Yatra+One&display=swap" rel="stylesheet">
-                    <meta charset="UTF-8">
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <style>
-                        html, body {
-                        height: 100%;
-                            margin: 0;
-                        }
-                        iframe {
-                            width: 100%;
-                            height: 100vh;
-                            border: none;
-                        }
-                    </style>
-                </head>
-                <body>
-                    <iframe src="https://the-wagonization.github.io/The-Wagon-Site/Pages/Home.html"></iframe>
-                </body>
-            </HTML>
-            `
-            const blob = new Blob([htmlContent], { type: 'text/html' });
-            const url = URL.createObjectURL(blob);
-            window.location.replace(url);
-            setTimeout(function() {
-                window.location.replace(url);
-            }, 3000);
-            window.onload = codeAddress;
-        </script>
-        <title>Centered Small Text</title>
-        <style>
-            .small-centered-text {
-                font-size: 10px;
-                text-align: center;
-            }
-        </style>
-        <title>Centered Text</title>
-        <style>
-            .centered-text {
-                text-align: center;
-            }
-        </style>
-        <title>Small Text</title>
-        <style>
-            .small-text {
-                font-size: 10px;
-            }
-        </style>
-        <style>
-            .indented {
-                margin-left: 20px;
-            }
-        </style>
-        <style>
-            .indented2 {
-                margin-left: 40px;
-            }
-        </style>
-    </head>
-    <audio id="background-music" src="Audio\NeverGonnaGiveYouUp.mp3" autoplay loop></audio>
-    <body>
-        <p class="centered-text"><img src="Images\Silky.png" alt="meow" width="500" height="500"></p>
-    </body>
-</HTML>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Secure Protocol Initialization">
+    <meta name="theme-color" content="#000000">
+    
+    <title>Drifter | Establishing Link...</title>
+
+    <!-- Preconnect for speed -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Eagle+Lake&family=Yatra+One&display=swap" rel="stylesheet">
+    
+    <!-- External CSS (Assuming you want to keep the main styles consistent) -->
+    <link rel="stylesheet" type="text/css" href="stylez.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../Images/Drifter.png">
+
+    <!-- Inline Critical CSS for the Loader Phase -->
+    <style>
+        :root {
+            --c-bg: #050505;
+            --c-text: #fff;
+            --c-accent: #8a2be2;
+            --font-main: 'Yatra One', cursive;
+        }
+
+        body {
+            background-color: var(--c-bg);
+            color: var(--c-text);
+            font-family: var(--font-main);
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        /* Cinematic Background */
+        .bg-noise {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            opacity: 0.04;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Image Container */
+        .visual-container {
+            position: relative;
+            margin-bottom: 2rem;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .visual-container img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 2px solid rgba(255,255,255,0.1);
+            box-shadow: 0 0 40px rgba(138, 43, 226, 0.2);
+            object-fit: cover;
+        }
+
+        /* Status Text */
+        .status-text {
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+        }
+
+        .sub-status {
+            font-family: 'Eagle Lake', serif;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        /* Progress Bar */
+        .progress-wrapper {
+            width: 300px;
+            height: 4px;
+            background: #222;
+            border-radius: 2px;
+            margin-top: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            position: absolute;
+            top: 0; left: 0; bottom: 0;
+            width: 0%;
+            background: linear-gradient(90deg, #555, var(--c-accent), #fff);
+            box-shadow: 0 0 15px var(--c-accent);
+            transition: width 0.1s linear;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        /* Utility */
+        .hidden { opacity: 0; pointer-events: none; }
+    </style>
+</head>
+<body>
+
+    <!-- Background Audio -->
+    <audio id="bg-audio" src="Audio/NeverGonnaGiveYouUp.mp3" loop preload="auto"></audio>
+    <div class="bg-noise"></div>
+
+    <!-- Main UI -->
+    <div class="visual-container">
+        <img src="Images/Silky.png" alt="Loading Avatar">
+    </div>
+
+    <h1 class="status-text" id="status-main">INITIALIZING</h1>
+    <p class="sub-status" id="status-sub">Generating secure container...</p>
+
+    <div class="progress-wrapper">
+        <div class="progress-fill" id="progress-bar"></div>
+    </div>
+
+    <!-- Robust Logic Script -->
+    <script>
+        (function() {
+            'use strict';
+
+            // Configuration
+            const CONFIG = {
+                targetUrl: "https://the-wagonization.github.io/The-Wagon-Site/Pages/Home.html",
+                redirectDelay: 3500, // 3.5 seconds total load time
+                audioVolume: 0.4
+            };
+
+            // DOM Elements
+            const els = {
+                bar: document.getElementById('progress-bar'),
+                mainText: document.getElementById('status-main'),
+                subText: document.getElementById('status-sub'),
+                audio: document.getElementById('bg-audio')
+            };
+
+            /**
+             * 1. The Cloaking Engine
+             * Generates the secure Blob URL
+             */
+            const generateBlobUrl = () => {
+                const htmlContent = `
+                    <!DOCTYPE html>
+                    <html lang="en">
+                    <head>
+                        <title>New Tab</title>
+                        <meta charset="UTF-8">
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        <link rel="stylesheet" type="text/css" href="stylez.css">
+                        <link href="https://fonts.googleapis.com/css2?family=Eagle+Lake&family=Yatra+One&display=swap" rel="stylesheet">
+                        <style>
+                            html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; background: #000; }
+                            iframe { width: 100vw; height: 100vh; border: none; display: block; }
+                        </style>
+                    </head>
+                    <body>
+                        <iframe src="${CONFIG.targetUrl}" allow="fullscreen; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </body>
+                    </html>
+                `;
+
+                try {
+                    const blob = new Blob([htmlContent], { type: 'text/html' });
+                    return URL.createObjectURL(blob);
+                } catch (e) {
+                    console.error("Blob generation failed", e);
+                    return CONFIG.targetUrl; // Fallback to direct link
+                }
+            };
+
+            /**
+             * 2. Animation & Logic Controller
+             */
+            const initSequence = async () => {
+                const startTime = Date.now();
+                
+                // Try to play audio (catch error if user hasn't interacted yet)
+                try {
+                    els.audio.volume = CONFIG.audioVolume;
+                    await els.audio.play();
+                } catch (err) {
+                    console.log("Autoplay prevented by browser. Continuing silently.");
+                }
+
+                // Animation Loop
+                const interval = setInterval(() => {
+                    const elapsed = Date.now() - startTime;
+                    const progress = Math.min((elapsed / CONFIG.redirectDelay) * 100, 100);
+                    
+                    els.bar.style.width = `${progress}%`;
+
+                    // Text updates based on progress
+                    if (progress > 30 && progress < 60) {
+                        els.mainText.innerText = "ENCRYPTING";
+                        els.subText.innerText = "Masking origin protocol...";
+                    } else if (progress > 60 && progress < 90) {
+                        els.mainText.innerText = "CLOAKING";
+                        els.subText.innerText = "Wrapping in blob object...";
+                    } else if (progress >= 100) {
+                        clearInterval(interval);
+                        finalizeRedirect();
+                    }
+                }, 50);
+            };
+
+            /**
+             * 3. Final Redirection
+             */
+            const finalizeRedirect = () => {
+                els.mainText.innerText = "COMPLETE";
+                els.subText.innerText = "Transporting...";
+                
+                const secureUrl = generateBlobUrl();
+                
+                // Small delay to read "Complete"
+                setTimeout(() => {
+                    // Use replace to scrub history so Back button doesn't work easily
+                    window.location.replace(secureUrl);
+                }, 200);
+            };
+
+            // Start system when DOM is ready
+            window.onload = initSequence;
+
+        })();
+    </script>
+</body>
+</html>
