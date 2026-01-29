@@ -1,87 +1,132 @@
-<!DOCTYPE HTML>
-<HTML>
-    <head>
-        <title>Cloaking...</title>
-        <link rel="icon" type="image/x-icon" href="..\Images\Drifter.png">
-        <link rel="stylesheet" type="text/css" href="stylez.css">
-        <link href="https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Yatra+One&display=swap" rel="stylesheet">
-        <script type="text/javascript">
-            (function(c,l,a,r,i,t,y){
-                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-            })(window, document, "clarity", "script", "oqwnloclrl");
-        </script>
-        <title>Centered Small Text</title>
-        <style>
-            .small-centered-text {
-                font-size: 10px;
-                text-align: center;
-            }
-        </style>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Centered Text</title>
-        <style>
-            .centered-text {
-                text-align: center;
-            }
-        </style>
-        <title>Small Text</title>
-        <style>
-            .small-text {
-                font-size: 10px;
-            }
-        </style>
-        <style>
-            .indented {
-                margin-left: 20px;
-            }
-        </style>
-        <style>
-            .indented2 {
-                margin-left: 40px;
-            }
-        </style>
-    </head>
-    <audio id="background-music" src="Audio\NeverGonnaGiveYouUp.mp3" autoplay loop></audio>
-    <body>
-        <p class="centered-text"><img src="Images\Silky.png" alt="meow" width="500" height="500"></p>
-        <script>
-            const htmlContent = `
-                <!DOCTYPE HTML>
-                <HTML lang="en">
-                <head>
-                    <title>New Tab</title>
-                    <link rel="stylesheet" type="text/css" href="stylez.css">
-                    <link href="https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap" rel="stylesheet">
-                    <link href="https://fonts.googleapis.com/css2?family=Yatra+One&display=swap" rel="stylesheet">
-                    <meta charset="UTF-8">
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <style>
-                        html, body {
-                            height: 100%;
-                            margin: 0;
-                        }
-                        iframe {
-                            width: 100%;
-                            height: 100vh;
-                            border: none;
-                        }
-                   </style>
-                </head>
-                <body>
-                    <iframe src="https://the-wagonization.github.io/The-Wagon-Site/Pages/Home.html"></iframe>
-                </body>
-                </HTML>
-            `;
-            const blob = new Blob([htmlContent], { type: 'text/html' });
-            const url = URL.createObjectURL(blob);
-            window.location.replace(url);
-            setTimeout(function() {
-                window.location.replace(url);
-            }, 3000);
-        </script>
-    </body>
-</HTML>
-<script src="..\yee.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="System Initialization">
+    
+    <title>Drifter | Awaiting Input</title>
+    
+    <!-- Preloading Critical Assets -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Eagle+Lake&family=Yatra+One&display=swap" rel="stylesheet">
+    
+    <link rel="icon" type="image/x-icon" href="../Images/Drifter.png">
+    <link rel="stylesheet" type="text/css" href="stylez.css">
+
+    <!-- Analytics (Preserved) -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "oqwnloclrl");
+    </script>
+</head>
+<body>
+
+    <!-- Audio Element -->
+    <audio id="audio-core" src="Audio/NeverGonnaGiveYouUp.mp3" loop preload="auto"></audio>
+
+    <!-- Visual Backgrounds -->
+    <div class="bg-void"></div>
+    <div class="bg-noise"></div>
+    <div class="scanline"></div>
+
+    <!-- Main Interface -->
+    <main class="interface-container">
+        <div class="glass-panel">
+            <header class="header-section">
+                <div class="avatar-container">
+                    <img src="Images/Silky.png" alt="User Avatar" class="avatar-img">
+                    <div class="avatar-ring"></div>
+                </div>
+                <h1 class="hero-title">The Wagon</h1>
+                <p class="status-text">System Standby... <span class="blink">_</span></p>
+            </header>
+
+            <div class="control-group">
+                <button id="engage-btn" class="btn-primary">
+                    <span class="btn-content">Initialize Protocol</span>
+                    <span class="btn-glitch"></span>
+                </button>
+            </div>
+
+            <div class="loader-wrapper hidden" id="system-loader">
+                <div class="loading-bar">
+                    <div class="loading-fill"></div>
+                </div>
+                <div class="loading-text">Establishing Secure Connection...</div>
+            </div>
+        </div>
+    </main>
+
+    <!-- External Script Loader -->
+    <script src="../yee.js"></script>
+
+    <!-- Inline Cloaking Controller -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('engage-btn');
+            const loader = document.getElementById('system-loader');
+            const audio = document.getElementById('audio-core');
+            const status = document.querySelector('.status-text');
+
+            btn.addEventListener('click', async () => {
+                // 1. UI Feedback
+                btn.classList.add('engaged');
+                status.innerHTML = "Access Granted.";
+                status.style.color = "#4ff";
+                
+                // 2. Audio Trigger (Safe Play)
+                try {
+                    audio.volume = 0.4;
+                    await audio.play();
+                } catch (err) {
+                    console.warn("Audio autoplay blocked by browser policy.");
+                }
+
+                // 3. Transition Animation
+                setTimeout(() => {
+                    btn.style.display = 'none';
+                    loader.classList.remove('hidden');
+                }, 400);
+
+                // 4. The Cloak Mechanism
+                setTimeout(() => {
+                    const targetUrl = "https://the-wagonization.github.io/The-Wagon-Site/Pages/Home.html";
+                    
+                    const cloakedHTML = `
+                        <!DOCTYPE html>
+                        <html lang="en" style="height:100%;overflow:hidden;">
+                        <head>
+                            <meta charset="UTF-8">
+                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                            <title>New Tab</title>
+                            <link rel="icon" href="about:blank"> 
+                            <style>
+                                body { margin:0; height:100%; background:#000; }
+                                iframe { border:0; width:100%; height:100%; display:block; }
+                            </style>
+                        </head>
+                        <body>
+                            <iframe src="${targetUrl}" allow="fullscreen; autoplay; camera; microphone" sandbox="allow-scripts allow-same-origin allow-forms allow-pointer-lock allow-presentation"></iframe>
+                        </body>
+                        </html>
+                    `;
+
+                    // Create Blob
+                    const blob = new Blob([cloakedHTML], { type: 'text/html' });
+                    const url = URL.createObjectURL(blob);
+
+                    // History Scrubbing (Prevents "Back" button from working easily)
+                    window.location.replace(url);
+                    
+                }, 2500); // Wait 2.5s for the loading animation to finish
+            });
+        });
+    </script>
+</body>
+</html>
